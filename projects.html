@@ -25,7 +25,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            width: 98%;
+            width: 100%;
+            max-width: 1200px;
             background-color: #1b1e23;
             position: relative;
             top: 0;
@@ -90,6 +91,12 @@
 
         .theme-toggle-switch.dark-mode .theme-toggle-circle {
             transform: translateX(30px);
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #61dafb;
+            margin: 20px 0;
         }
 
         .projects-container {
@@ -187,8 +194,8 @@
             color: #61dafb;
         }
 
-          /* Custom Cursor Styles */
-          .cursor {
+        /* Custom Cursor Styles */
+        .cursor {
             position: absolute;
             pointer-events: none;
             border-radius: 50%;
@@ -215,6 +222,77 @@
             background: #fff;
         }
 
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .projects-container {
+                padding: 10px;
+                margin-top: 20px;
+            }
+
+            .project-card {
+                padding: 15px;
+            }
+
+            .project-card h3 {
+                font-size: 20px;
+            }
+
+            .project-card p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .navbar a {
+                font-size: 16px;
+            }
+
+            .theme-toggle-container {
+                margin-top: 10px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                text-align: center;
+            }
+
+            .projects-container {
+                width: 100%;
+                padding: 5px;
+            }
+
+            .project-card {
+                padding: 10px;
+            }
+
+            .project-card h3 {
+                font-size: 18px;
+            }
+
+            .project-card p {
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -233,6 +311,7 @@
             </div>
         </div>
     </header>
+
     <h1>Paul's Projects</h1>
     <div class="projects-container">
         <div class="project-card">
@@ -268,9 +347,9 @@
         <a href="https://t.me/@Dawnwotherspoon" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
     </div>
 
- <!-- Custom Cursor -->
- <div class="cursor cursor-outer"></div>
- <div class="cursor cursor-inner"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor cursor-outer"></div>
+    <div class="cursor cursor-inner"></div>
 
     <script>
         // Theme Toggle Functionality
@@ -283,7 +362,6 @@
             themeToggleSwitch.classList.toggle('dark-mode', darkTheme);
         });
 
-        
         // Custom Cursor
         document.addEventListener('mousemove', (event) => {
             const outerCursor = document.querySelector('.cursor-outer');
@@ -293,11 +371,12 @@
             innerCursor.style.left = `${event.clientX}px`;
             innerCursor.style.top = `${event.clientY}px`;
         });
-    </script>
-       <script>
+
+        // Redirect Logo Click
         document.getElementById('logo').addEventListener('click', function() {
             window.location.href = 'index.html'; // Redirects to index.html
         });
-        </script>  
+    </script>
 </body>
 </html>
+s
